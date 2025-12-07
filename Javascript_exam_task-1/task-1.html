@@ -12,15 +12,17 @@
 </head>
 <body>
 <div class="main-wrapper">
-    <div id="info-wrapper">
+    <form id="info-wrapper">
         <h2>Test</h2>
-        <label>name/value pair<input id="input_name" class="name_value" placeholder="name=value"></label>
+        <label>name/value pair<input type="text" name="input" id="input_name" placeholder="name=value"></label>
         <b id="list_text">name/value pair list</b>
         <div id="output"></div>
-    </div>
-    <div class="buttons_wrapper">
+    </form>
+    <div class="add_delete_wrapper">
         <button id="add">Add</button>
         <button id="delete">Delete</button>
+    </div>
+    <div class="buttons_wrapper">
         <button id="sort_by_name">Sort by Name</button>
         <button id="sort_by_value">Sort by Value</button>
     </div>
