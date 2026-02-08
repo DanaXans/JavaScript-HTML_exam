@@ -5,7 +5,7 @@
 
 body {
     width: 100%;
-    background: #d1d1f4;
+    background: #bdbdea;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -16,10 +16,10 @@ body {
     margin-top: 180px;
     width: 45vw;
     height: 60vh;
-    background: #fbfbff;
+    background: #e9e9f5;
     border-radius: 15px;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -32,17 +32,19 @@ body {
     height: 43vh;
 }
 
-#input_name {
+#input_name_value {
     width: 450px;
     height: 40px;
     outline: #c8c0da;
     border: 2px solid #c8c0da;
+    color: rgb(95, 67, 122);
+    background-color: rgba(226, 221, 236, 0.44);
     border-radius: 10px;
     padding: 0 5px;
     margin-bottom: 15px;
 }
 
-#input_name::placeholder {
+#input_name_value::placeholder {
     color: #c8c0da;
     font-weight: bold;
     font-size: 16px;
@@ -51,11 +53,21 @@ body {
     align-items: center;
 }
 
+.element {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+#checkboxes {
+    margin: 5px;
+}
 #output {
     width: 450px;
     height: 33vh;
     outline: #c8c0da;
     border: 2px solid #c8c0da;
+    background-color: rgba(226, 221, 236, 0.44);
+    color: rgb(95, 67, 122);
     border-radius: 10px;
     padding: 0 5px;
     overflow: scroll;
@@ -63,24 +75,34 @@ body {
     overflow-y: auto;
 }
 
-label {
+#value_pair {
     display: flex;
     flex-direction: column;
-    color: #c8c0da;
+    color: #bdb2d5;
     font: bold 16px sans-serif;
 }
 
-#list_text {
+#pair_list {
     display: flex;
     flex-direction: column;
-    color: #c8c0da;
+    color: #bdb2d5;
     font: bold 16px sans-serif;
 }
 
 h2 {
     margin: 10px 0;
     font: bold 30px sans-serif;
-    color: rgba(124, 77, 166, 0.73);
+    color: #7C4DA6BA;
+}
+
+.buttons_wrapper {
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    flex-direction: column;
+    height: 27vh;
+    width: 25vw;
+    margin: 0 50px 0;
 }
 
 #add, #sort_by_name, #sort_by_value, #delete {
@@ -93,46 +115,31 @@ h2 {
     margin: 5px 0;
 }
 
-/********************buttons*************************/
-.buttons_wrapper {
-    display: flex;
-    justify-content: start;
-    align-content: center;
-    flex-direction: column;
-    height: 27vh;
-    width: 25vw;
-    margin: 0 50px 0;
-}
-
 #add {
-    background: #6D50C3;
+    background: rgb(108, 84, 173);
     margin: 0 0 25px 0;
 }
 
 #delete {
-    background: #DB4D67;
+    background: #be4942;
 }
 
 #sort_by_name, #sort_by_value {
-    background: rgba(124, 77, 166, 0.73);
+    background: rgb(150, 128, 206);
 }
 
 #sort_by_name:hover {
-    background: rgba(166, 121, 213, 0.73);
-    border: solid rgba(166, 128, 206, 0.73) 2px;
+    background: rgba(150, 128, 206, 0.88);
 }
 
 #sort_by_value:hover {
-    background: rgba(166, 121, 213, 0.73);
-    border: solid rgba(166, 128, 206, 0.73) 2px;
-}
-
-#delete:hover {
-    background: rgb(224, 106, 128);
-    border: solid rgb(192, 70, 94) 2px;
+    background: rgba(150, 128, 206, 0.88);
 }
 
 #add:hover {
-    background: #9477ec;
-    border: solid 2px #7f61e1;
+    background: rgba(101, 75, 169, 0.87);
+}
+
+#delete:hover {
+    background: rgba(190, 73, 66, 0.85);
 }
