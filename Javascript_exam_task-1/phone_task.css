@@ -1,0 +1,84 @@
+@media screen and (min-width: 375px) and (max-width: 769px) {
+    .main-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: start;
+        flex-direction: column;
+        margin-top: 30px;
+        width: 95vw;
+        height: 92vh;
+    }
+
+    #info-wrapper {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        margin-left: 22px;
+        height: 70vh;
+        width: 80vw;
+    }
+
+    #input_name_value {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 300px;
+        height: 30px;
+    }
+
+    #output {
+        width: 300px;
+        height: 30vh;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .buttons_wrapper {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        height: 15vh;
+        width: 90vw;
+        padding-bottom: 100px;
+        margin: 0;
+    }
+
+    .add_delete_buttons {
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px
+    }
+
+    .sort_buttons {
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px
+    }
+
+    #add, #sort_by_name, #sort_by_value, #delete {
+        font: bold 16px sans-serif;
+        width: 150px;
+        height: 40px;
+
+    }
+
+    #add {
+        margin: 0;
+    }
+
+    #sort_by_value, #delete {
+        margin-left: 15px
+    }
+}
