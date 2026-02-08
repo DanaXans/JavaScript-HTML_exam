@@ -7,24 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Title</title>
     <link href="desktop_task-1.css" rel="stylesheet">
-    <link href="0-480_task.css" rel="stylesheet">
+    <link href="phone_task.css" rel="stylesheet">
     <link href="tablet_task-1.css" rel="stylesheet">
 </head>
 <body>
 <div class="main-wrapper">
-    <form id="info-wrapper">
+    <div id="info-wrapper">
         <h2>Test</h2>
-        <label>name/value pair<input type="text" name="input" id="input_name" placeholder="name=value"></label>
-        <b id="list_text">name/value pair list</b>
+        <b id="value_pair">name/value pair<input type="text" name="input" id="input_name_value" placeholder="name=value"></b>
+        <b id="pair_list">name/value pair list</b>
         <div id="output"></div>
-    </form>
-    <div class="add_delete_wrapper">
-        <button id="add">Add</button>
-        <button id="delete">Delete</button>
     </div>
     <div class="buttons_wrapper">
-        <button id="sort_by_name">Sort by Name</button>
-        <button id="sort_by_value">Sort by Value</button>
+        <div class="add_delete_buttons">
+            <button id="add">Add</button>
+            <button id="delete">Delete</button>
+        </div>
+        <div class="sort_buttons">
+            <button id="sort_by_name">Sort by Name</button>
+            <button id="sort_by_value">Sort by Value</button>
+        </div>
     </div>
 </div>
 <script src="task-1.js"></script>
