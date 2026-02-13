@@ -1,6 +1,6 @@
 let addButton = document.getElementById('add');
 let input_name_value = document.getElementById('input_name_value');
-let deleteButton = document.getElementById('delete')
+let deleteButton = document.getElementById('delete');
 let output = document.getElementById('output');
 
 let arr = [];
