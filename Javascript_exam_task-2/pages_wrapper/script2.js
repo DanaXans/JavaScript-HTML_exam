@@ -26,24 +26,25 @@ catch phrase: ${selectedUser.company.catchPhrase}
 `;
 
 let button_posts = document.createElement('button');
-button_posts.id = selectedUser.id;
+// button_posts.id = selectedUser.id;
 button_posts.innerText = 'post of current user';
 
 
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(response => response.json())
-        .then(json => {
-            const arrPosts = json;
-            let p = document.createElement('p');
-            for (const posts of arrPosts) {
-                button_posts.addEventListener('click', () => {
-                if(posts.userId===selectedUser.id) {
-                    p.innerHTML = posts.userId;
-                }
-                })
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(json => {
+        const arrPosts = json;
+        button_posts.addEventListener('click', () => {
+            const posts = arrPosts.filter(post => post.userId === selectedUser.id);
+            for (const post of posts) {
+                let postElement = document.createElement('p');
+                postElement.innerText = "";
+                postElement.innerText = post.title;
+
+                document.body.appendChild(postElement);
             }
-            document.body.appendChild(p);
         })
+    })
 
 
 // document.body.innerText=`${selectedUser.name}`
