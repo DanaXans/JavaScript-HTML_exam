@@ -24,11 +24,8 @@ name: ${selectedUser.company.name}
 bs: ${selectedUser.company.bs}
 catch phrase: ${selectedUser.company.catchPhrase}
 `;
-
 let button_posts = document.createElement('button');
-// button_posts.id = selectedUser.id;
 button_posts.innerText = 'post of current user';
-
 
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
@@ -40,19 +37,19 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             let postsWrapper = document.createElement("div");
             let postDetailsButton = document.createElement('button');
             let postElement = document.createElement('p');
-
+console.log(post)
             button_posts.addEventListener('click', () => {
                 postElement.innerText = post.title;
                 postDetailsButton.innerText = 'post details';
                 document.body.append(postsWrapper);
                 postsWrapper.append(postElement, postDetailsButton);
             })
-
+            postDetailsButton.addEventListener('click', () => {
+                localStorage.setItem('details_of_posts', JSON.stringify(post));
+                window.location.href = ("post-details.html");
+            })
         }
     })
-
-
-// document.body.innerText=`${selectedUser.name}`
 document.body.append(wrapper);
 wrapper.append(h3_name, button_posts);
 h3_name.append(paragraph_info);
