@@ -18,7 +18,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             buttonUrl.innerText = 'Details';
             buttonUrl.id=user.id;
 
-            buttonUrl.addEventListener('click', (id) => {
+            buttonUrl.addEventListener('click', () => {
                 localStorage.setItem('selectedUser', JSON.stringify(user));
                 window.location.href = "user-details.html";
             });

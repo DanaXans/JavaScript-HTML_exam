@@ -28,21 +28,23 @@ catch phrase: ${selectedUser.company.catchPhrase}
 let button_posts = document.createElement('button');
 button_posts.id = selectedUser.id;
 button_posts.innerText = 'post of current user';
-button_posts.addEventListener('click', () => {
+
+
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(json => {
             const arrPosts = json;
             let p = document.createElement('p');
-            for (const post of arrPosts) {
-                const selectedPosts = post.userId;
-                p.innerText =selectedPosts;
-
+            for (const posts of arrPosts) {
+                button_posts.addEventListener('click', () => {
+                if(posts.userId===selectedUser.id) {
+                    p.innerHTML = posts.userId;
+                }
+                })
             }
-            console.log(arrPosts);
             document.body.appendChild(p);
         })
-})
+
 
 // document.body.innerText=`${selectedUser.name}`
 document.body.append(wrapper);
