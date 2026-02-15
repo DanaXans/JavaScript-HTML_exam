@@ -1,3 +1,8 @@
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(json => {
+
 const selectedUser = JSON.parse(localStorage.getItem('selectedUser'));
 console.log(selectedUser)
 
@@ -27,9 +32,6 @@ catch phrase: ${selectedUser.company.catchPhrase}
 let button_posts = document.createElement('button');
 button_posts.innerText = 'post of current user';
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then(json => {
         const arrPosts = json;
         const posts = arrPosts.filter(post => post.userId === selectedUser.id);
 
@@ -37,7 +39,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             let postsWrapper = document.createElement("div");
             let postDetailsButton = document.createElement('button');
             let postElement = document.createElement('p');
-console.log(post)
+            console.log(post)
             button_posts.addEventListener('click', () => {
                 postElement.innerText = post.title;
                 postDetailsButton.innerText = 'post details';
@@ -49,7 +51,7 @@ console.log(post)
                 window.location.href = ("post-details.html");
             })
         }
+        document.body.append(wrapper);
+        wrapper.append(h3_name, button_posts);
+        h3_name.append(paragraph_info);
     })
-document.body.append(wrapper);
-wrapper.append(h3_name, button_posts);
-h3_name.append(paragraph_info);
