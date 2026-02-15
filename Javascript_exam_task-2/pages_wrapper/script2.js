@@ -34,16 +34,21 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
     .then(json => {
         const arrPosts = json;
-        button_posts.addEventListener('click', () => {
-            const posts = arrPosts.filter(post => post.userId === selectedUser.id);
-            for (const post of posts) {
-                let postElement = document.createElement('p');
-                postElement.innerText = "";
-                postElement.innerText = post.title;
+        const posts = arrPosts.filter(post => post.userId === selectedUser.id);
 
-                document.body.appendChild(postElement);
-            }
-        })
+        for (const post of posts) {
+            let postsWrapper = document.createElement("div");
+            let postDetailsButton = document.createElement('button');
+            let postElement = document.createElement('p');
+
+            button_posts.addEventListener('click', () => {
+                postElement.innerText = post.title;
+                postDetailsButton.innerText = 'post details';
+                document.body.append(postsWrapper);
+                postsWrapper.append(postElement, postDetailsButton);
+            })
+
+        }
     })
 
 
