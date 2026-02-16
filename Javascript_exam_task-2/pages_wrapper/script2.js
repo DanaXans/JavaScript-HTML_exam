@@ -32,13 +32,13 @@ catch phrase: ${selectedUser.company.catchPhrase}
 let button_posts = document.createElement('button');
 button_posts.innerText = 'post of current user';
 
-        const arrPosts = json;
-        const posts = arrPosts.filter(post => post.userId === selectedUser.id);
+        const posts = json.filter(post => post.userId === selectedUser.id);
 
         for (const post of posts) {
             let postsWrapper = document.createElement("div");
             let postDetailsButton = document.createElement('button');
             let postElement = document.createElement('p');
+            // let postId= post.id;
             console.log(post)
             button_posts.addEventListener('click', () => {
                 postElement.innerText = post.title;
