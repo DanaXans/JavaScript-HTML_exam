@@ -10,9 +10,30 @@ body{
     font-family: Arial sans-serif;
 }
 .main-wrapper{
+    padding: 40px;
+    margin: 50px;
+    color: rgb(37, 68, 100);
+    border-radius: 7px;
+    background: rgba(168, 200, 231, 0.51);
+}
+.main-wrapper>h3{
+    font-size: 25px;
+}
+.main-wrapper>button{
+    width: 90%;
+    height: 35px;
+    background: rgba(143, 174, 208, 0.51);
+    border: 2px  solid rgba(89, 123, 152, 0.51);
+    border-radius: 7px;
+    font-size: 17px;
     color: rgb(37, 68, 100);
 }
-.main-wrapper>p{
-    font-size: 18px;
-    padding: 10px 0 10px 0;
+.paragraph-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.paragraph-wrapper>p{
+    font-size: 19px;
+    padding: 30px 50px 40px 0;
 }

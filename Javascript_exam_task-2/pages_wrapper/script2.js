@@ -8,6 +8,9 @@ fetch('https://jsonplaceholder.typicode.com/posts')
         let main_wrapper = document.createElement('div');
         main_wrapper.classList.add('main-wrapper');
         let h3_name = document.createElement('h3');
+        let paragraph_wrapper= document.createElement('div');
+        paragraph_wrapper.classList.add('paragraph-wrapper');
+
         let paragraph_info = document.createElement('p');
         let paragraph_address = document.createElement('p');
         let paragraph_company = document.createElement('p');
@@ -55,5 +58,6 @@ catch phrase: ${selectedUser.company.catchPhrase}
             })
         }
         document.body.append(main_wrapper);
-        main_wrapper.append(h3_name, paragraph_info,paragraph_address,paragraph_company, button_posts);
+        main_wrapper.append(h3_name, paragraph_wrapper,button_posts);
+        paragraph_wrapper.append(paragraph_info,paragraph_address,paragraph_company)
     })
