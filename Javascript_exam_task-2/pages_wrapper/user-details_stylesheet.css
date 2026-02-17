@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(155, 188, 224, 0.45);
+    font-family: Arial sans-serif;
+}
+.main-wrapper{
+    color: rgb(37, 68, 100);
+}
+.main-wrapper>p{
+    font-size: 18px;
+    padding: 10px 0 10px 0;
+}
