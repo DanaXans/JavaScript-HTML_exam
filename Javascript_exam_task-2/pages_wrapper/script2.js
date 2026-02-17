@@ -1,36 +1,39 @@
-
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
     .then(json => {
 
-const selectedUser = JSON.parse(localStorage.getItem('selectedUser'));
-console.log(selectedUser)
+        const selectedUser = JSON.parse(localStorage.getItem('selectedUser'));
+        console.log(selectedUser)
 
-let wrapper = document.createElement('div');
-let h3_name = document.createElement('h3');
-let paragraph_info = document.createElement('p');
+        let main_wrapper = document.createElement('div');
+        main_wrapper.classList.add('main-wrapper');
+        let h3_name = document.createElement('h3');
+        let paragraph_info = document.createElement('p');
+        let paragraph_address = document.createElement('p');
+        let paragraph_company = document.createElement('p');
 
-h3_name.innerText = `${selectedUser.name}`;
-paragraph_info.innerText = `id: ${selectedUser.id}
+        h3_name.innerText = `${selectedUser.name}`;
+
+        paragraph_info.innerText = `id: ${selectedUser.id}
 user name: ${selectedUser.username}
 phone: ${selectedUser.phone}
 email: ${selectedUser.email}
-website: ${selectedUser.website}
+website: ${selectedUser.website}`;
 
-Address:
+        paragraph_address.innerText = `Address:
 city: ${selectedUser.address.city}
 street: ${selectedUser.address.street}
 geo location: ${selectedUser.address.geo.lat} ${selectedUser.address.geo.lng}
 suite: ${selectedUser.address.suite}
-zipcode: ${selectedUser.address.zipcode}
+zipcode: ${selectedUser.address.zipcode}`;
 
-Company:
+        paragraph_company.innerText = `Company:
 name: ${selectedUser.company.name}
 bs: ${selectedUser.company.bs}
 catch phrase: ${selectedUser.company.catchPhrase}
 `;
-let button_posts = document.createElement('button');
-button_posts.innerText = 'post of current user';
+        let button_posts = document.createElement('button');
+        button_posts.innerText = 'post of current user';
 
         const posts = json.filter(post => post.userId === selectedUser.id);
 
@@ -51,7 +54,6 @@ button_posts.innerText = 'post of current user';
                 window.location.href = ("post-details.html");
             })
         }
-        document.body.append(wrapper);
-        wrapper.append(h3_name, button_posts);
-        h3_name.append(paragraph_info);
+        document.body.append(main_wrapper);
+        main_wrapper.append(h3_name, paragraph_info,paragraph_address,paragraph_company, button_posts);
     })
