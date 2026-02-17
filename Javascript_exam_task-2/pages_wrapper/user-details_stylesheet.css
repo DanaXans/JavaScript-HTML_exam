@@ -6,12 +6,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: rgba(155, 188, 224, 0.45);
     font-family: Arial sans-serif;
+    margin: 0;
 }
 .main-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 51vw;
     padding: 40px;
-    margin: 50px;
+    margin: 70px 0 20px 0;
     color: rgb(37, 68, 100);
     border-radius: 7px;
     background: rgba(168, 200, 231, 0.51);
@@ -36,4 +43,12 @@ body{
 .paragraph-wrapper>p{
     font-size: 19px;
     padding: 30px 50px 40px 0;
+}
+.post-wrapper{
+
+    margin: 5px;
+    padding: 10px;
+    gap: 20px;
+    border-radius: 7px;
+    background: rgba(168, 200, 231, 0.36);
 }

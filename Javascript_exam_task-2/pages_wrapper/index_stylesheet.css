@@ -21,7 +21,7 @@ body {
     flex-direction: column;
     height: 200px;
     width: 500px;
-    border: 2px  solid rgba(89, 123, 152, 0.51);
+    /*border: 2px  solid rgba(89, 123, 152, 0.51);*/
     border-radius: 7px;
     background: rgba(168, 200, 231, 0.51);
     margin: 10px;
@@ -40,12 +40,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    color: rgb(37, 68, 100);
 }
 .textWrapper>p{
     padding:7px;
-    color: rgb(37, 68, 100);
     font-weight:  bold;
-}
-.textWrapper>h3{
-    color: rgb(37, 68, 100);
 }
