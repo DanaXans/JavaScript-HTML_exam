@@ -7,6 +7,8 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
         let main_wrapper = document.createElement('div');
         main_wrapper.classList.add('main-wrapper');
+        let postsWrapper=document.createElement('div');
+        postsWrapper.classList.add('posts-wrapper');
         let h3_name = document.createElement('h3');
         let paragraph_wrapper= document.createElement('div');
         paragraph_wrapper.classList.add('paragraph-wrapper');
@@ -41,23 +43,26 @@ catch phrase: ${selectedUser.company.catchPhrase}
         const posts = json.filter(post => post.userId === selectedUser.id);
 
         for (const post of posts) {
-            let postsWrapper = document.createElement("div");
+            let postsInfo = document.createElement("div");
+            postsInfo.classList.add('postsInfo');
+
             let postDetailsButton = document.createElement('button');
-            let postElement = document.createElement('p');
+            let paragraph_elem = document.createElement('p');
             // let postId= post.id;
             console.log(post)
             button_posts.addEventListener('click', () => {
-                postElement.innerText = post.title;
+                paragraph_elem.innerText = post.title;
                 postDetailsButton.innerText = 'post details';
-                document.body.append(postsWrapper);
-                postsWrapper.append(postElement, postDetailsButton);
+                postsWrapper.append(postsInfo)
+                postsInfo.append(paragraph_elem, postDetailsButton);
             })
             postDetailsButton.addEventListener('click', () => {
                 localStorage.setItem('details_of_posts', JSON.stringify(post));
                 window.location.href = ("post-details.html");
             })
         }
-        document.body.append(main_wrapper);
+
+        document.body.append(main_wrapper,postsWrapper);
         main_wrapper.append(h3_name, paragraph_wrapper,button_posts);
         paragraph_wrapper.append(paragraph_info,paragraph_address,paragraph_company)
     })

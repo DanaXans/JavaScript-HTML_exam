@@ -16,13 +16,15 @@ fetch('https://jsonplaceholder.typicode.com/comments?postsId=1')
         let heading_post = document.createElement('h3');
         heading_post.innerText = `${posts_details.id}. ${posts_details.title}`;
         post_text.innerText = `${posts_details.body}`;
-
-
+        let main_wrapper = document.createElement('div');
+        main_wrapper.classList.add('main_wrapper');
         object_post.append(heading_post, post_text);
         ///
         let comments_of_post = document.createElement('div');
         comments_of_post.classList.add('comments_of_post');
-        document.body.append(object_post, comments_of_post);
+
+        main_wrapper.append(object_post, comments_of_post);
+        document.body.append(main_wrapper);
 
         for (const comment of comments) {
             //текст комментов
