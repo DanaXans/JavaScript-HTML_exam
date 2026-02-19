@@ -58,7 +58,7 @@ catch phrase: ${selectedUser.company.catchPhrase}
             })
             postDetailsButton.addEventListener('click', () => {
                 localStorage.setItem('details_of_posts', JSON.stringify(post));
-                window.location.href = ("post-details.html");
+                window.location.href = "../posts/post-details.html";
             })
         }
 
