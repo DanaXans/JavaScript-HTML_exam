@@ -1,94 +1,94 @@
-//кнопка добавления нового элемента
+//кнопка додавання нового елемента
 let addButton = document.getElementById('add');
-//input для ввода имени и значения
+//input для введення імені та значення
 let input_name_value = document.getElementById('input_name_value');
-//кнопка "удалить" элемент
+//кнопка "видалити" елемент
 let deleteButton = document.getElementById('delete');
-//поле для вывода элементов
+//поле для виведення елементів
 let output = document.getElementById('output');
 
-//массив для хранения добавляемых данных
+//масив для зберігання даних, що додаються
 let arr = [];
 
-//функция отрисовывает элементы массива и добавляет/обновляет в блок output
+//функція малює елементи масиву і додає/оновлює блок output
 function render() {
-    //очищает контейнер, чтобы не было одинаковых элементов
+    //очищає контейнер, щоб не було однакових елементів
     output.innerHTML = '';
 
-    //вытягиваем и проходимся по каждому элементу массива
+    //витягуємо та проходимося по кожному елементу масиву
     for (const elem of arr) {
-        //создаем чекбоксы
+        //Створюємо чекбокси
         const checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
         checkbox.classList.add('checkboxes');
-        //создаем label-обертку для элементов чекбокс и текста
+        //створюємо label-обгортку для елементів чекбокс та тексту
         const label = document.createElement('label');
         label.classList.add('element')
 
-        //создаем параграф с текстом name=value
+        //Створюємо параграф з текстом name=value
         const paragraph = document.createElement('p');
         paragraph.innerText = `${elem.name}=${elem.value}`;
-        //в label-обертку добавляем текст и чекбокс
+        //В label-обгортку додаємо текст і чекбокс
         label.append(checkbox, paragraph);
-        //добавляем в output-контейнер обертку
+        //додаємо в output-контейнер обгортку
         output.append(label);
     }
 }
 
-//кнопке "добавить" даем обработчик, "click"
+//кнопці "додати" даємо обробник, "click"
 addButton.addEventListener('click', () => {
-    //присваиваем содержимое input переменной
+    //Привласнюємо вміст input змінної
     const value = input_name_value.value;
-    // Разделяем строку по символу "=" на массив [name, value]
+    // Розділяємо рядок за символом "=" на масив [name, value]
     let textParts = value.split("=");
-    //Извлекаем ключ и значение из массива ?.
-    // Помогает избежать ошибки в случае, если отсутствуют элементы в массиве
+    //Вилучаємо ключ і значення з масиву?.
+    // Допомагає уникнути помилки у разі, якщо відсутні елементи в масиві
     let keyTxt = textParts[0]?.trim();
     let valueTxt = textParts[1]?.trim();
 
-    //проверяем, подходит ли элемент по шаблону и не является ли NaN или undefined
+    //перевіряємо, чи підходить елемент за шаблоном і чи не є NaN або undefined
     if (!value.match(/^\s*([a-z-A-Z-а-я-А-Я-0-9]+)\s*=\s*([a-z-A-Z-а-я-А-Я-0-9]+)\s*$/) || NaN || undefined) {
         throw new Error('invalid input value');
     } else {
-        //создаем обьект с ключом и значением
+        //створюємо об'єкт із ключем і значенням
         let template = {name: `${keyTxt}`, value: `${valueTxt}`};
-        //добавляем обьект в массив arr
+        //додаємо об'єкт у масив arr
         arr.push(template);
     }
-    //вызываем функцию отрисовки "render"
+    //викликаємо функцію відтворення "render"
     render();
 });
 
-//кнопке "удалить" добавляем обработчик
+//кнопці "видалити" додаємо обробник
 deleteButton.addEventListener('click', () => {
-    //получаем все отрисованные элементы
+    //отримуємо всі відмальовані елементи
     const elements = document.querySelectorAll('.element');
 
-    //при нажатии на кнопку "delete" остаются только те элементы массива,
-    // чекбокс у которых не отмечен!
+    //при натисканні на кнопку "delete" залишаються лише ті елементи масиву,
+    // Чекбокс у яких не відзначений!
     arr = arr.filter((item, index) => {
-        //находи чекбокс внутри DOM-элемента
+        //знаходь чекбокс всередині DOM-елемента
         const checkbox = elements[index].querySelector('input');
-        //если чекбокс не отмечен - элемент остается в массиве
+        //якщо чекбокс не відзначений - елемент залишається у масиві
         return !checkbox.checked;
     })
     render();
 });
 
-//находим среди DOM-элементов кнопку сортировки по имени
+//знаходимо серед DOM-елементів кнопку сортування на ім'я
 let sortByName = document.getElementById('sort_by_name');
-//кнопке "отсортировать по имени" добавляем обработчик
+//кнопці "відсортувати на ім'я" додаємо обробник
 sortByName.addEventListener('click', () => {
-    //сортируем элементы по длине строки name в порядке возрастания
+    //сортуємо елементи за довжиною рядка name у порядку зростання
     arr.sort((a, b) => a.name.length - b.name.length);
     render();
 });
 
-//находим среди DOM-элементов кнопку сортировки по значению
+//Знаходимо серед DOM-елементів кнопку сортування за значенням
 let sortByValue = document.getElementById('sort_by_value');
-//кнопке "отсортировать по значению" добавляем обработчик
+//кнопці "відсортувати за значенням" додаємо обробник
 sortByValue.addEventListener('click', () => {
-    //сортируем элементы по длине строки value в порядке возрастания
+    //сортуємо елементи за довжиною рядка value у порядку зростання
     arr.sort((a, b) => a.value.length - b.value.length);
     render();
 });
