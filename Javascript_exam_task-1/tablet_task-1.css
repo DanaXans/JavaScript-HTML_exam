@@ -6,16 +6,24 @@
         margin: 60px 0;
         width: 90vw;
         height: 85vh;
+        padding: 30px;
+    }
+
+    #info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        width: 100%;
+        height: 55vh;
+        margin-left: 0;
+        /*margin: 0 auto;*/
     }
 
     #input_name_value {
-        width: 550px;
         height: 47px;
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
-        color: #c8c0da;
-        font: bold 16px sans-serif;
     }
 
     #input_name_value::placeholder {
@@ -23,19 +31,9 @@
         height: 40px;
     }
 
-    #info-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        margin-left: 35px;
-        height: 50vh;
-    }
-
     #output {
-        width: 550px;
-        height: 45vh;
+        height: 35vh;
     }
-
 
     h2 {
         font-size: 35px;
@@ -45,22 +43,16 @@
     }
 
     #add, #sort_by_name, #sort_by_value, #delete {
-        border: none;
-        color: white;
-        border-radius: 12px;
-        width: 150px;
-        height: 50px;
-        font: bold 18px sans-serif;
+        width: 15vw;
+        height: 40px;
     }
 
     #add {
-        background: #6D50C3;
         margin: 0 0 33px 0;
     }
 
     .buttons_wrapper {
-        height: 25vh;
-        width: 25vw;
+        width: 35vw;
         margin: 0 10px 0;
     }
 }

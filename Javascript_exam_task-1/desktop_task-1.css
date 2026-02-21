@@ -15,7 +15,7 @@ body {
 .main-wrapper {
     margin-top: 180px;
     width: 45vw;
-    height: 60vh;
+    height: 55vh;
     background: #e9e9f5;
     border-radius: 15px;
     display: flex;
@@ -30,18 +30,20 @@ body {
     flex-direction: column;
     margin-left: 100px;
     height: 43vh;
+    width: 70vh;
 }
 
 #input_name_value {
-    width: 450px;
+    width: 97%;
     height: 40px;
     outline: #c8c0da;
     border: 2px solid #c8c0da;
-    color: rgb(95, 67, 122);
+    color: rgba(124, 77, 166, 0.6);
     background-color: rgba(226, 221, 236, 0.44);
     border-radius: 10px;
-    padding: 0 5px;
+    padding: 0 0 0 5px;
     margin-bottom: 15px;
+    font: bold 15px sans-serif;
 }
 
 #input_name_value::placeholder {
@@ -58,16 +60,18 @@ body {
     align-items: center;
     margin: 5px;
 }
+
 #checkboxes {
     margin: 5px;
 }
+
 #output {
-    width: 450px;
+    width: 97%;
     height: 33vh;
     outline: #c8c0da;
     border: 2px solid #c8c0da;
     background-color: rgba(226, 221, 236, 0.44);
-    color: rgb(95, 67, 122);
+    color: #7C4DA6BA;
     border-radius: 10px;
     padding: 0 5px;
     overflow: scroll;
@@ -100,8 +104,8 @@ h2 {
     justify-content: start;
     align-content: center;
     flex-direction: column;
-    height: 27vh;
-    width: 25vw;
+    height: 33vh;
+    width: 20vw;
     margin: 0 50px 0;
 }
 
