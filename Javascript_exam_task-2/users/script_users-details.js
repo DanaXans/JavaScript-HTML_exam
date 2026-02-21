@@ -7,10 +7,10 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
         let main_wrapper = document.createElement('div');
         main_wrapper.classList.add('main-wrapper');
-        let postsWrapper=document.createElement('div');
+        let postsWrapper = document.createElement('div');
         postsWrapper.classList.add('posts-wrapper');
         let h3_name = document.createElement('h3');
-        let paragraph_wrapper= document.createElement('div');
+        let paragraph_wrapper = document.createElement('div');
         paragraph_wrapper.classList.add('paragraph-wrapper');
 
         let paragraph_info = document.createElement('p');
@@ -45,11 +45,9 @@ catch phrase: ${selectedUser.company.catchPhrase}
         for (const post of posts) {
             let postsInfo = document.createElement("div");
             postsInfo.classList.add('postsInfo');
-
             let postDetailsButton = document.createElement('button');
             let paragraph_elem = document.createElement('p');
-            // let postId= post.id;
-            console.log(post)
+
             button_posts.addEventListener('click', () => {
                 paragraph_elem.innerText = post.title;
                 postDetailsButton.innerText = 'post details';
@@ -61,8 +59,7 @@ catch phrase: ${selectedUser.company.catchPhrase}
                 window.location.href = "../posts/post-details.html";
             })
         }
-
-        document.body.append(main_wrapper,postsWrapper);
-        main_wrapper.append(h3_name, paragraph_wrapper,button_posts);
-        paragraph_wrapper.append(paragraph_info,paragraph_address,paragraph_company)
+        document.body.append(main_wrapper, postsWrapper);
+        main_wrapper.append(h3_name, paragraph_wrapper, button_posts);
+        paragraph_wrapper.append(paragraph_info, paragraph_address, paragraph_company)
     })
