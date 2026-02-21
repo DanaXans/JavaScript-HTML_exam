@@ -8,10 +8,11 @@ body {
     color: rgb(37, 68, 100);
     background-color: rgba(155, 188, 224, 0.45);
 }
-.main_wrapper{
+
+.main_wrapper {
     background-color: rgba(209, 226, 246, 0.27);
     margin-top: 100px;
-    padding: 50px 0 70px 0 ;
+    padding: 50px 0 70px 0;
 }
 
 .object_post {
